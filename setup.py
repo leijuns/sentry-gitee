@@ -13,14 +13,10 @@ from setuptools import setup, find_packages
 
 
 tests_require = [
-    'nose',
+    'sentry>=8.0.0',
 ]
 
-install_requires = [
-    'sentry>=5.0.0',
-    'python-gitlab>=0.15.1,<1.0.0',
-    'requests>=2.0',
-]
+install_requires = []
 
 setup(
     name='sentry-gitlab',
@@ -37,7 +33,6 @@ setup(
     install_requires=install_requires,
     tests_require=tests_require,
     extras_require={'test': tests_require},
-    test_suite='runtests.runtests',
     include_package_data=True,
     entry_points={
         'sentry.apps': [

@@ -37,9 +37,3 @@ Bugs & Issues
 -------------
 
 If you find something that doesn't work please create an issue or even better fix it and submit a pull request!
-
-Dependencies
-------------
-
-* [python-gitlab](https://github.com/gpocentek/python-gitlab)
-* [requests](http://www.python-requests.org)
