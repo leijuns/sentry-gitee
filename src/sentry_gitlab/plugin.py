@@ -43,6 +43,19 @@ class GitLabOptionsForm(forms.Form):
         help_text=_('Enter the labels you want to auto assign to new issues.'),
         required=False)
 
+    def clean(self):
+        gl = gitlab.Gitlab(self.cleaned_data['gitlab_url'], self.cleaned_data['gitlab_token'])
+        try:
+            gl.auth()
+        except gitlab.GitlabAuthenticationError as e:
+            raise forms.ValidationError(_('Unauthorized: Invalid Private Token: %s') % (e,))
+        except gitlab.GitlabConnectionError as e:
+            raise forms.ValidationError(six.text_type(e))
+        except Exception as e:
+            self.logger.error('Failed to create GitLab issue', exc_info=True)
+            raise forms.ValidationError(_('Error Communicating with GitLab: %s') % (e,))
+        return self.cleaned_data
+
 
 class GitLabPlugin(IssuePlugin):
     author = 'Pancentric Ltd'
