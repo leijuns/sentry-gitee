@@ -18,7 +18,7 @@ tests_require = [
 
 install_requires = [
     'sentry>=5.0.0',
-    'python-gitlab>=0.5',
+    'python-gitlab>=0.15.1,<1.0.0',
     'requests>=2.0',
 ]
 
