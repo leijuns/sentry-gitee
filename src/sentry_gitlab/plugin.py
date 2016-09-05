@@ -5,10 +5,10 @@ sentry_gitlab.plugin
 :copyright: (c) 2012 by the Sentry Team, see AUTHORS for more details.
 :license: BSD, see LICENSE for more details.
 """
+import gitlab
 
 from django import forms
 from django.utils.translation import ugettext_lazy as _
-from gitlab import Gitlab, GitlabAuthenticationError
 from sentry.plugins.bases.issue import IssuePlugin
 
 import sentry_gitlab
@@ -76,7 +76,7 @@ class GitLabPlugin(IssuePlugin):
 
         try:
             gl.auth()
-        except GitlabAuthenticationError as e:
+        except gitlab.GitlabAuthenticationError as e:
             raise forms.ValidationError(_('Unauthorized: Invalid Private Token: %s') % (e,))
         except Exception as e:
             self.logger.error('Failed to create GitLab issue', exc_info=True)
