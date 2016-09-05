@@ -20,7 +20,9 @@ class GitLabOptionsForm(forms.Form):
         label=_('GitLab URL'),
         widget=forms.TextInput(attrs={'placeholder': 'e.g. https://gitlab.example.com'}),
         help_text=_('Enter the URL for your GitLab server'),
-        required=True)
+        required=True,
+        initial='https://gitlab.com',
+    )
 
     gitlab_token = forms.CharField(
         label=_('GitLab Private Token'),
