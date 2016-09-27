@@ -1,6 +1,8 @@
 Sentry Gitlab
 =============
 
+**DEPRECATED:** This project now lives in [sentry-plugins](https://github.com/getsentry/sentry-plugins>)
+
 A plugin for Sentry which allow you to create issues in your GitLab repositories from Sentry errors.
 
 This module used the [sentry-github](https://github.com/getsentry/sentry-github) module as a basis for it structure.
