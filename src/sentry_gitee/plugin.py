@@ -127,10 +127,10 @@ class GiteePlugin(IssuePlugin):
             raise forms.ValidationError(_('Error Communicating with Gitee: %s') % (e,))
 
     def get_issue_label(self, group, issue_id, **kwargs):
-        return 'GL-%s' % issue_id
+        return 'ISSUE-%s' % issue_id
 
     def get_issue_url(self, group, issue_id, **kwargs):
-        url = self.get_option('gitee_owner', group.project)
+        owner = self.get_option('gitee_owner', group.project)
         repo = self.get_option('gitee_repo', group.project)
 
-        return '%s/%s/issues/%s' % (url, repo, issue_id)
+        return 'https://gitee.com/%s/%s/issues/%s' % (owner, repo, issue_id)
