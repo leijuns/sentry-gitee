@@ -21,8 +21,8 @@ install_requires = []
 setup(
     name='sentry-gitee',
     version='0.2.0',
-    author='Alex Crowe',
-    author_email='alex@pancentric.com',
+    author='lei2jun',
+    author_email='724099654@qq.com',
     url='https://gitee.com/lei2jun/sentry-gitee',
     description='A Sentry extension which integrates with Gitee.',
     long_description=__doc__,
