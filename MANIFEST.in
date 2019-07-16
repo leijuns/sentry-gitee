@@ -1,3 +1,3 @@
 include setup.py README.md MANIFEST.in LICENSE
-recursive-include src/sentry_gitlab *
+recursive-include src/sentry_gitee *
 global-exclude *~

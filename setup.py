@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 """
-sentry-gitlab
+sentry-gitee
 =============
 
-An extension for Sentry which integrates with GitLab. Specifically, it allows
+An extension for Sentry which integrates with Gitee. Specifically, it allows
 you to easily create issues from events within Sentry.
 
 :copyright: (c) 2015 Pancentric Ltd, see AUTHORS for more details.
@@ -19,12 +19,12 @@ tests_require = [
 install_requires = []
 
 setup(
-    name='sentry-gitlab',
+    name='sentry-gitee',
     version='0.2.0',
     author='Alex Crowe',
     author_email='alex@pancentric.com',
-    url='http://github.com/ajcrowe/sentry-gitlab',
-    description='A Sentry extension which integrates with GitLab.',
+    url='https://gitee.com/lei2jun/sentry-gitee',
+    description='A Sentry extension which integrates with Gitee.',
     long_description=__doc__,
     license='BSD',
     package_dir={'': 'src'},
@@ -36,10 +36,10 @@ setup(
     include_package_data=True,
     entry_points={
         'sentry.apps': [
-            'gitlab = sentry_gitlab',
+            'gitee = sentry_gitee',
         ],
         'sentry.plugins': [
-            'gitlab = sentry_gitlab.plugin:GitLabPlugin'
+            'gitee = sentry_gitee.plugin:GiteePlugin'
         ],
     },
     classifiers=[
